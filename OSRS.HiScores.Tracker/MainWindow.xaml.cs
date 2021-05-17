@@ -37,15 +37,10 @@ namespace OSRS.HiScores.Tracker
             MainWindow.Instance = this;
         }
 
-        public void OpenBrowsePage()
-        {
-            this.PageControl.SelectedIndex = 0;
-        }
-
-        public void OpenSearchPage(PlayerScores scores)
+        public async Task OpenSearchPage(PlayerScores scores)
         {
             this.PageControl.SelectedIndex = 1;
-            SearchPage.Instance.DisplayPlayer(scores);
+            await SearchPage.Instance.DisplayPlayer(scores);
         }
     }
 }

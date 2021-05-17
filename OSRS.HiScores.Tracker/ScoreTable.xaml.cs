@@ -156,13 +156,13 @@ namespace OSRS.HiScores.Tracker
             this.UpdateLock.Release();
         }
 
-        private void DoubleClick(object sender, MouseButtonEventArgs e)
+        private async void DoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (!(sender is ListView))
                 return;
 
             ListView view = sender as ListView;
-            MainWindow.Instance.OpenSearchPage(view.SelectedItem as PlayerScores);
+            await MainWindow.Instance.OpenSearchPage(view.SelectedItem as PlayerScores);
         }
 
         protected void OnPropertyChanged([CallerMemberName] string name = null)

@@ -618,6 +618,7 @@ namespace OSRS.HiScores.Tracker
 
             this.BusyIndicator.IsBusy = false;
         }
+
         private async void SearchButtonClick(object sender, RoutedEventArgs e)
         {
             await this.DisplayPlayer();
