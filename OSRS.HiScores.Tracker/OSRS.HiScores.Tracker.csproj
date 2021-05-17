@@ -1,0 +1,115 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BusyIndicator" Version="1.6.0" />
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.0.2" />
+    <PackageReference Include="MahApps.Metro" Version="2.4.5" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="4.8.0" />
+    <PackageReference Include="MaterialDesignColors" Version="2.0.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.0.0" />
+    <PackageReference Include="System.Reactive.Linq" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OSRS.HiScores\OSRS.HiScores.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="OSRSIcons\agility_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\hitpoints_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\strength_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="OSRSIcons\abyssalsire_icon.png" />
+	<EmbeddedResource Include="OSRSIcons\attack_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\alchemicalhydra_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\barrowschests_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\bountyhunterhunter_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\bountyhunterrogue_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\bryophyta_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\callisto_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\cerberus_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\chaoselemental_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\chaosfanatic_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\cluescrollsall_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\cluescrollsbeginner_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\cluescrollseasy_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\cluescrollselite_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\cluescrollshard_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\cluescrollsmaster_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\cluescrollsmedium_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\commanderzilyana_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\construction_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\cooking_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\corporealbeast_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\cox_challenge_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\cox_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\crafting_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\crazyarchaeologist_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\dagannothprime_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\dagannothrex_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\dagannothsupreme_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\defence_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\derangedarchaeologist_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\farming_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\firemaking_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\fishing_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\fletching_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\generalgraardor_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\giantmole_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\grotesqueguardians_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\herblore_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\hespori_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\hunter_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\kalphitequeen_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\kingblackdragon_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\kraken_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\kreearra_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\kriltsutsaroth_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\leaguepoints_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\lms_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\magic_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\mimic_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\mining_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\nightmare_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\obor_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\prayer_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\ranged_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\runecraft_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\sarachnis_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\scorpia_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\skotizo_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\slayer_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\smithing_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\smokedevil_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\tempoross_icon.png" />
+	<EmbeddedResource Include="OSRSIcons\soulwarszeal_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\theatreofblood_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\thecorruptedgauntlet_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\thegauntlet_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\thieving_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\tzkalzuk_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\tztokjad_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\venenatis_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\vetion_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\vorkath_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\wintertodt_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\woodcutting_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\zalcano_icon.png" />
+    <EmbeddedResource Include="OSRSIcons\zulrah_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="ScoreTable.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Page>
+  </ItemGroup>
+
+</Project>

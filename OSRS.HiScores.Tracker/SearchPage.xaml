@@ -1,0 +1,31 @@
+﻿<UserControl xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"  x:Class="OSRS.HiScores.Tracker.SearchPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OSRS.HiScores.Tracker"
+             xmlns:busyindicator="clr-namespace:BusyIndicator;assembly=BusyIndicator"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <TextBox x:Name="SearchBox" Text="{Binding Path=PlayerName, Mode=TwoWay}" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.287,0.43" Height="16"/>
+        <Button HorizontalAlignment="Left" Margin="465,10,0,0" VerticalAlignment="Top" Width="45" Height="26" Click="SearchButtonClick">
+            <materialDesign:PackIcon Height="17" Width="34" Kind="Search" VerticalAlignment="Center" >
+                <materialDesign:PackIcon.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.352"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </materialDesign:PackIcon.RenderTransform>
+            </materialDesign:PackIcon>
+        </Button>
+        <busyindicator:BusyMask x:Name="BusyIndicator" Background="{Binding Background, ElementName=SkillTable}" IsBusy="False" IndicatorType="Ring" BusyContent="Please wait..." FocusAfterBusy="{Binding ElementName = SearchBox}">
+            <Grid>
+                <local:SkillTable x:Name="SkillTable" HorizontalAlignment="Center" Margin="0,41,0,0" VerticalAlignment="Top" Height="289" Width="527"/>
+                <local:ActivityTable x:Name="ActivityTable" Margin="137,264,136,-73"></local:ActivityTable>
+            </Grid>
+        </busyindicator:BusyMask>
+    </Grid>
+</UserControl>
