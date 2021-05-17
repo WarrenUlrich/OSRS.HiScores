@@ -13,6 +13,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Net.Http;
+using System.Windows.Input;
 
 namespace OSRS.HiScores.Tracker
 {
@@ -155,6 +156,15 @@ namespace OSRS.HiScores.Tracker
             this.UpdateLock.Release();
         }
 
+        private void DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (!(sender is ListView))
+                return;
+
+            ListView view = sender as ListView;
+            MainWindow.Instance.OpenSearchPage(view.SelectedItem as PlayerScores);
+        }
+
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
@@ -165,29 +175,54 @@ namespace OSRS.HiScores.Tracker
             if(!ScoresViewInitialized)
             {
                 GridView gridView = new GridView();
-                GridViewColumn rankColumn = new GridViewColumn();
-                rankColumn.DisplayMemberBinding = new Binding($"{this.Category}.Rank");
-                rankColumn.Header = "Rank";
-                rankColumn.Width = 120;
-                gridView.Columns.Add(rankColumn);
+                
+                if(this.Category < Category.LeaguePoints) // Skill columns
+                {
+                    GridViewColumn rankColumn = new GridViewColumn();
+                    rankColumn.DisplayMemberBinding = new Binding($"{this.Category}.Rank");
+                    rankColumn.Header = "Rank";
+                    rankColumn.Width = 120;
+                    gridView.Columns.Add(rankColumn);
 
-                GridViewColumn nameColumn = new GridViewColumn();
-                nameColumn.DisplayMemberBinding = new Binding("Name");
-                nameColumn.Header = "Name";
-                nameColumn.Width = 150;
-                gridView.Columns.Add(nameColumn);
+                    GridViewColumn nameColumn = new GridViewColumn();
+                    nameColumn.DisplayMemberBinding = new Binding("Name");
+                    nameColumn.Header = "Name";
+                    nameColumn.Width = 150;
+                    gridView.Columns.Add(nameColumn);
 
-                GridViewColumn levelColumn = new GridViewColumn();
-                levelColumn.DisplayMemberBinding = new Binding($"{this.Category}.Level");
-                levelColumn.Header = "Level";
-                levelColumn.Width = 150;
-                gridView.Columns.Add(levelColumn);
+                    GridViewColumn levelColumn = new GridViewColumn();
+                    levelColumn.DisplayMemberBinding = new Binding($"{this.Category}.Level");
+                    levelColumn.Header = "Level";
+                    levelColumn.Width = 150;
+                    gridView.Columns.Add(levelColumn);
 
-                GridViewColumn xpColumn = new GridViewColumn();
-                xpColumn.DisplayMemberBinding = new Binding($"{this.Category}.XP");
-                xpColumn.Header = "XP";
-                xpColumn.Width = 150;
-                gridView.Columns.Add(xpColumn);
+                    GridViewColumn xpColumn = new GridViewColumn();
+                    xpColumn.DisplayMemberBinding = new Binding($"{this.Category}.XP");
+                    xpColumn.Header = "XP";
+                    xpColumn.Width = 150;
+                    gridView.Columns.Add(xpColumn);
+
+                }
+                else
+                {
+                    GridViewColumn rankColumn = new GridViewColumn();
+                    rankColumn.DisplayMemberBinding = new Binding($"{this.Category}.Rank");
+                    rankColumn.Header = "Rank";
+                    rankColumn.Width = 120;
+                    gridView.Columns.Add(rankColumn);
+
+                    GridViewColumn nameColumn = new GridViewColumn();
+                    nameColumn.DisplayMemberBinding = new Binding("Name");
+                    nameColumn.Header = "Name";
+                    nameColumn.Width = 150;
+                    gridView.Columns.Add(nameColumn);
+
+                    GridViewColumn scoreColumn = new GridViewColumn();
+                    scoreColumn.DisplayMemberBinding = new Binding($"{this.Category}.Score");
+                    scoreColumn.Header = "Score";
+                    scoreColumn.Width = 150;
+                    gridView.Columns.Add(scoreColumn);
+                }
 
                 this.ScoresView.View = gridView;
                 this.ScoresViewInitialized = true;

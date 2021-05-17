@@ -107,7 +107,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="ScoreTable.xaml">
+    <Page Update="SkillScoreTable.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </Page>
   </ItemGroup>

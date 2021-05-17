@@ -374,11 +374,10 @@ namespace OSRS.HiScores
             {
                 //Incapsula bypass?
                 client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/29.0.1547.76 Safari/537.36");
+
                 using (var response = await client.GetAsync(site))
                 {
                     var result = Encoding.UTF8.GetString(await response.Content.ReadAsByteArrayAsync());
-
-                    Console.WriteLine(result);
                     var matches = Regex.Matches(result, "user1=(.*?)\"");
                     foreach(var p in matches.AsParallel()
                                             .AsOrdered()

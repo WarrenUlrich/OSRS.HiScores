@@ -22,6 +22,8 @@ namespace OSRS.HiScores.Tracker
     /// </summary>
     public partial class SearchPage : UserControl
     {
+        public static SearchPage Instance { get; private set; }
+
         public SearchPage()
         {
             InitializeComponent();
@@ -31,6 +33,8 @@ namespace OSRS.HiScores.Tracker
             {
                 await this.DisplayPlayer();
             };
+
+            SearchPage.Instance = this;
         }
 
         public string PlayerName { get; set; }
@@ -80,7 +84,15 @@ namespace OSRS.HiScores.Tracker
                 return;
             }
             
-            //This is aids
+            await DisplayPlayer(playerScores);
+        }
+
+        public async Task DisplayPlayer(PlayerScores playerScores)
+        {
+            this.SkillTable.Columns.Clear();
+            this.ActivityTable.Columns.Clear();
+            this.BusyIndicator.IsBusy = true;
+
             this.SkillTable.Columns.Add(new SkillColumn()
             {
                 Icon = GetCategoryIcon("attack_icon"),
@@ -198,7 +210,7 @@ namespace OSRS.HiScores.Tracker
             });
 
             //Activies
-            if(playerScores.LeaguePoints?.Rank > 0)
+            if (playerScores.LeaguePoints?.Rank > 0)
                 this.ActivityTable.Columns.Add(new ActivityColumn()
                 {
                     Icon = GetCategoryIcon("leaguepoints_icon"),
@@ -606,7 +618,6 @@ namespace OSRS.HiScores.Tracker
 
             this.BusyIndicator.IsBusy = false;
         }
-
         private async void SearchButtonClick(object sender, RoutedEventArgs e)
         {
             await this.DisplayPlayer();

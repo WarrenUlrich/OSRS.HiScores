@@ -2,9 +2,13 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:busyindicator="clr-namespace:BusyIndicator;assembly=BusyIndicator"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Controls="clr-namespace:OSRS.HiScores.Tracker">
+
+    <UserControl.Resources>
+
+    </UserControl.Resources>
     <busyindicator:BusyMask x:Name="BusyIndicator" Background="{Binding Background, ElementName=ScoresView}" IsBusy="False" IndicatorType="Ring" BusyContent="Please wait..." FocusAfterBusy="{Binding ElementName = ScoresView}">
         <Grid>
-            <ListView x:Name="ScoresView" Margin="10,10,10,79" ItemsSource="{Binding Scores}" Loaded="ScoresViewLoaded">
+            <ListView x:Name="ScoresView" Margin="10,10,10,79" ItemsSource="{Binding Scores}" Loaded="ScoresViewLoaded" MouseDoubleClick="DoubleClick">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn x:Name="RankColumn" Header="Rank" Width="120"/>

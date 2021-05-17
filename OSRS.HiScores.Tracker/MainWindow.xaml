@@ -8,7 +8,7 @@
 
     <Grid >
         <Controls:ModeSelector></Controls:ModeSelector>
-        <TabControl>
+        <TabControl x:Name="PageControl">
             <TabItem Header="Browse" Height="25" VerticalAlignment="Top">
                 <Controls:BrowsePage/>
             </TabItem>

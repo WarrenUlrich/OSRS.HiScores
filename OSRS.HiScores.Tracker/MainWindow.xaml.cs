@@ -25,6 +25,8 @@ namespace OSRS.HiScores.Tracker
         [DllImport("kernel32.dll")]
         private static extern bool AllocConsole();
 
+        public static MainWindow Instance { get; private set; }
+
         public MainWindow()
         {
             #if DEBUG
@@ -32,6 +34,18 @@ namespace OSRS.HiScores.Tracker
             #endif
 
             InitializeComponent();
+            MainWindow.Instance = this;
+        }
+
+        public void OpenBrowsePage()
+        {
+            this.PageControl.SelectedIndex = 0;
+        }
+
+        public void OpenSearchPage(PlayerScores scores)
+        {
+            this.PageControl.SelectedIndex = 1;
+            SearchPage.Instance.DisplayPlayer(scores);
         }
     }
 }
